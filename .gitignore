@@ -34,3 +34,10 @@ build/
 
 ### Http ###
 /http/
+
+### Properties ###
+application-*.properties
+!application-example.properties
+
+### WakaTime ###
+/.wakatime-project
