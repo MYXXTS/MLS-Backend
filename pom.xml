@@ -27,6 +27,7 @@
         <sa-token.version>1.37.0</sa-token.version>
         <spring-boot.version>3.2.2</spring-boot.version>
         <commons-codec.version>1.16.1</commons-codec.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
     <licenses>
         <license>
@@ -113,6 +114,11 @@
             <artifactId>sa-token-spring-boot-starter</artifactId>
             <version>${sa-token.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
 
         <!-- Lombok -->
         <dependency>
@@ -125,6 +131,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!-- Spring DevTools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
