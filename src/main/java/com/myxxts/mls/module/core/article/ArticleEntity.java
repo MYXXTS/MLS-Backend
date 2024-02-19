@@ -1,6 +1,8 @@
-package com.myxxts.mls.module.entity.core;
+package com.myxxts.mls.module.core.article;
 
-import com.myxxts.mls.module.entity.BaseEntity;
+import com.myxxts.mls.module.BaseModule;
+import com.myxxts.mls.module.core.category.CategoryEntity;
+import com.myxxts.mls.module.core.tag.TagEntity;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,15 +19,27 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Document(collection = "article")
-public class Article extends BaseEntity {
+public class ArticleEntity extends BaseModule {
     @Id
     private ObjectId aid = new ObjectId(); // Article id
 
     @Field(write = Field.Write.ALWAYS)
-    private List<Category> categories; // Category Info
+//    @DocumentReference(collection = "category",
+//            lookup = "{ " +
+//                    "'acid' : ?#{#target.acid}," +
+//                    "'name' : ?#{#target.name}," +
+//                    "'route' : ?#{#target.route} " +
+//                    "}")
+    private List<CategoryEntity> categories; // Category Info
 
     @Field(write = Field.Write.ALWAYS)
-    private List<Tag> tags; // Tag Info list
+//    @DocumentReference(collection = "tag",
+//            lookup = "{ " +
+//                    "'atid' : ?#{#target.atid}," +
+//                    "'name' : ?#{#target.name}," +
+//                    "'route' : ?#{#target.route} " +
+//                    "}")
+    private List<TagEntity> tags; // Tag Info list
 
     @NotNull(message = "Article title cannot empty")
     @Field(write = Field.Write.ALWAYS)
@@ -62,7 +76,7 @@ public class Article extends BaseEntity {
     @Field(write = Field.Write.ALWAYS)
     private ArticleMetaData metaData; // Article meta data
 
-    public Article(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, List<Category> categories, List<Tag> tags, String title, String content, String briefIntro, String coverImage, String coverImageCopyRight, Boolean allowRss, Boolean allowComment, Boolean isTop, Integer expire, LocalDateTime expireTime, String copyright, String articleStatus, String copyrightInfo) {
+    public ArticleEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, List<CategoryEntity> categories, List<TagEntity> tags, String title, String content, String briefIntro, String coverImage, String coverImageCopyRight, Boolean allowRss, Boolean allowComment, Boolean isTop, Integer expire, LocalDateTime expireTime, String copyright, String articleStatus, String copyrightInfo) {
         super(createBy, updateBy, createTime, updateTime);
         this.categories = categories;
         this.tags = tags;
@@ -78,7 +92,7 @@ public class Article extends BaseEntity {
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-class ArticleMetaData {
+class ArticleEntityMetaData {
     @Field(write = Field.Write.ALWAYS)
     private Boolean allowRss; // Article allow rss
     @Field(write = Field.Write.ALWAYS)

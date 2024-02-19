@@ -1,6 +1,6 @@
-package com.myxxts.mls.module.entity.core;
+package com.myxxts.mls.module.core.category;
 
-import com.myxxts.mls.module.entity.BaseEntity;
+import com.myxxts.mls.module.BaseModule;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.bson.types.ObjectId;
@@ -11,11 +11,11 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Document(collection = "article_category")
-public class Category extends BaseEntity {
+public class CategoryEntity extends BaseModule {
     @Id
     private ObjectId acid = new ObjectId(); // Article category id
     @Field(write = Field.Write.NON_NULL)
-    private Category child; // Article category child
+    private CategoryEntity child; // Article category child
     @Field(write = Field.Write.ALWAYS)
     private Integer articleCount = 0; // Article category article count
     @Field(write = Field.Write.ALWAYS)
@@ -25,7 +25,7 @@ public class Category extends BaseEntity {
     @Field(write = Field.Write.ALWAYS)
     private String route = name; // Article category route
 
-    public Category(ObjectId createBy, ObjectId updateBy, String name, String description) {
+    public CategoryEntity(ObjectId createBy, ObjectId updateBy, String name, String description) {
         super(createBy, updateBy);
         this.name = name;
         this.description = description;

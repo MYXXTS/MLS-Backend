@@ -1,8 +1,8 @@
 package com.myxxts.mls.repository;
 
-import com.myxxts.mls.module.entity.core.Article;
-import com.myxxts.mls.module.entity.core.Category;
-import com.myxxts.mls.module.entity.core.Tag;
+import com.myxxts.mls.module.core.article.ArticleEntity;
+import com.myxxts.mls.module.core.category.CategoryEntity;
+import com.myxxts.mls.module.core.tag.TagEntity;
 import com.myxxts.mls.repository.core.ArticleRepository;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;
@@ -20,13 +20,13 @@ public class ArticleRepositoryTest {
     @Test
     void testAddArticle() {
         ObjectId user = new ObjectId();
-        Category category = new Category(
+        CategoryEntity category = new CategoryEntity(
                 user,
                 user,
                 "default category",
                 "this is the default category"
         );
-        Tag tag1 = new Tag(
+        TagEntity tag1 = new TagEntity(
                 user,
                 user,
                 LocalDateTime.now(),
@@ -34,7 +34,7 @@ public class ArticleRepositoryTest {
                 "default tag 1",
                 "this is the default tag 1"
         );
-        Tag tag2 = new Tag(
+        TagEntity tag2 = new TagEntity(
                 user,
                 user,
                 LocalDateTime.now(),
@@ -42,7 +42,7 @@ public class ArticleRepositoryTest {
                 "default tag 2",
                 "this is the default tag 2"
         );
-        Article article = new Article(
+        ArticleEntity article = new ArticleEntity(
                 user,
                 user,
                 LocalDateTime.now(),
@@ -63,6 +63,7 @@ public class ArticleRepositoryTest {
                 "100",
                 "none"
         );
-        articleRepository.save(article);
+        ArticleEntity save = articleRepository.save(article);
+        System.out.println(save);
     }
 }

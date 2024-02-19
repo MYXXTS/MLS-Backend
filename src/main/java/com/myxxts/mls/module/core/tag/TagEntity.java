@@ -1,6 +1,6 @@
-package com.myxxts.mls.module.entity.core;
+package com.myxxts.mls.module.core.tag;
 
-import com.myxxts.mls.module.entity.BaseEntity;
+import com.myxxts.mls.module.BaseModule;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +16,13 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @Document(collection = "tag")
-public class Tag extends BaseEntity {
+//@CompoundIndex(
+//        name = "tag_index",
+//        def = "{'name': 1, 'route': 1}",
+//        unique = true,
+//        background = true
+//)
+public class TagEntity extends BaseModule {
     @Id
     @Field(write = Field.Write.ALWAYS)
     private ObjectId atid = new ObjectId(); // Article tag id
@@ -30,7 +36,7 @@ public class Tag extends BaseEntity {
     @Field(write = Field.Write.ALWAYS)
     private String route = name; // Tag route
 
-    public Tag(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, String name, String description) {
+    public TagEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, String name, String description) {
         super(createBy, updateBy, createTime, updateTime);
         this.name = name;
         this.description = description;
