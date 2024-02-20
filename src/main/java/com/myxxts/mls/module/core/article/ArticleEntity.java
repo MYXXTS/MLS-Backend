@@ -24,15 +24,6 @@ public class ArticleEntity extends BaseModule {
     private ObjectId aid = new ObjectId(); // Article id
 
     @Field(write = Field.Write.ALWAYS)
-//    @DocumentReference(collection = "category",
-//            lookup = "{ " +
-//                    "'acid' : ?#{#target.acid}," +
-//                    "'name' : ?#{#target.name}," +
-//                    "'route' : ?#{#target.route} " +
-//                    "}")
-    private List<CategoryEntity> categories; // Category Info
-
-    @Field(write = Field.Write.ALWAYS)
 //    @DocumentReference(collection = "tag",
 //            lookup = "{ " +
 //                    "'atid' : ?#{#target.atid}," +
@@ -40,6 +31,15 @@ public class ArticleEntity extends BaseModule {
 //                    "'route' : ?#{#target.route} " +
 //                    "}")
     private List<TagEntity> tags; // Tag Info list
+
+    @Field(write = Field.Write.ALWAYS)
+//    @DocumentReference(collection = "category",
+//            lookup = "{ " +
+//                    "'acid' : ?#{#target.acid}," +
+//                    "'name' : ?#{#target.name}," +
+//                    "'route' : ?#{#target.route} " +
+//                    "}")
+    private List<CategoryEntity> categories; // Category Info
 
     @NotNull(message = "Article title cannot empty")
     @Field(write = Field.Write.ALWAYS)
@@ -74,18 +74,18 @@ public class ArticleEntity extends BaseModule {
     private Integer likeCount = 0; // Article like count
 
     @Field(write = Field.Write.ALWAYS)
-    private ArticleMetaData metaData; // Article meta data
+    private ArticleEntityMetaData metaData; // Article meta data
 
-    public ArticleEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, List<CategoryEntity> categories, List<TagEntity> tags, String title, String content, String briefIntro, String coverImage, String coverImageCopyRight, Boolean allowRss, Boolean allowComment, Boolean isTop, Integer expire, LocalDateTime expireTime, String copyright, String articleStatus, String copyrightInfo) {
+    public ArticleEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, List<TagEntity> tags, List<CategoryEntity> categories, String title, String content, String briefIntro, String coverImage, String coverImageCopyRight, Boolean allowRss, Boolean allowComment, Boolean isTop, Integer expire, LocalDateTime expireTime, String copyright, String articleStatus, String copyrightInfo) {
         super(createBy, updateBy, createTime, updateTime);
-        this.categories = categories;
         this.tags = tags;
+        this.categories = categories;
         this.title = title;
         this.content = content;
         this.briefIntro = briefIntro;
         this.coverImage = coverImage;
         this.coverImageCopyRight = coverImageCopyRight;
-        this.metaData = new ArticleMetaData(allowRss, allowComment, isTop, expire, expireTime, copyright, articleStatus, copyrightInfo);
+        this.metaData = new ArticleEntityMetaData(allowRss, allowComment, isTop, expire, expireTime, copyright, articleStatus, copyrightInfo);
     }
 }
 
@@ -113,7 +113,7 @@ class ArticleEntityMetaData {
     // 200：not allow reprint
     // 202: reprint from other website or from internet
     @Field(write = Field.Write.ALWAYS)
-    private String copyright; // Article copyright information
+    private String copyright; // Article copyright
     // Article Status Code Reference:
     // Article Status Code consists of three parts.
     // first part is the article status, 0 means not published, 1 means published, 2 means deleted.
