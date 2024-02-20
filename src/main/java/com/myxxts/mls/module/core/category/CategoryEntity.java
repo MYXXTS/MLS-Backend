@@ -27,10 +27,17 @@ public class CategoryEntity extends BaseModule {
     @Field(write = Field.Write.ALWAYS)
     private String route; // Article category route
 
+    public CategoryEntity(ObjectId createBy, ObjectId updateBy, CategoryEntity child, String name, String description) {
+        super(createBy, updateBy);
+        this.child = child;
+        this.name = name;
+        this.description = description;
+        route = name.replaceAll("\\s+", "-");
+    }
     public CategoryEntity(ObjectId createBy, ObjectId updateBy, String name, String description) {
         super(createBy, updateBy);
         this.name = name;
         this.description = description;
-        this.route = name.replaceAll("\\s+", "-");
+        route = name.replaceAll("\\s+", "-");
     }
 }

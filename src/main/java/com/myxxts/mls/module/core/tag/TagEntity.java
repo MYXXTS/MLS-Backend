@@ -8,8 +8,6 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,8 +28,8 @@ public class TagEntity extends BaseModule {
     @Field(write = Field.Write.ALWAYS)
     private String route; // Tag route
 
-    public TagEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, String name, String description) {
-        super(createBy, updateBy, createTime, updateTime);
+    public TagEntity(ObjectId createBy, ObjectId updateBy, String name, String description) {
+        super(createBy, updateBy);
         this.name = name;
         this.description = description;
         this.route = name.replaceAll("\\s+", "-");

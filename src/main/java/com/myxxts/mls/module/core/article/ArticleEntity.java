@@ -51,8 +51,8 @@ public class ArticleEntity extends BaseModule {
     @Field(write = Field.Write.ALWAYS)
     private ArticleEntityMetaData metaData; // Article meta data
 
-    public ArticleEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, List<TagEntity> tags, List<CategoryEntity> categories, String title, String content, String briefIntro, String coverImage, String coverImageCopyRight, Boolean allowRss, Boolean allowComment, Boolean isTop, Integer expire, LocalDateTime expireTime, String copyright, String articleStatus, String copyrightInfo) {
-        super(createBy, updateBy, createTime, updateTime);
+    public ArticleEntity(ObjectId createBy, ObjectId updateBy, List<TagEntity> tags, List<CategoryEntity> categories, String title, String content, String briefIntro, String coverImage, String coverImageCopyRight, Boolean allowRss, Boolean allowComment, Boolean isTop, Integer expire, LocalDateTime expireTime, String copyright, String articleStatus, String copyrightInfo) {
+        super(createBy, updateBy);
         this.tags = tags;
         this.categories = categories;
         this.title = title;
