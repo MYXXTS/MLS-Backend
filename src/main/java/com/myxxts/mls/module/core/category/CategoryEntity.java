@@ -1,19 +1,21 @@
 package com.myxxts.mls.module.core.category;
 
 import com.myxxts.mls.module.BaseModule;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @Document(collection = "article_category")
 public class CategoryEntity extends BaseModule {
     @Id
-    private ObjectId acid = new ObjectId(); // Article category id
+    private ObjectId cid = new ObjectId(); // Article category id
     @Field(write = Field.Write.NON_NULL)
     private CategoryEntity child; // Article category child
     @Field(write = Field.Write.ALWAYS)

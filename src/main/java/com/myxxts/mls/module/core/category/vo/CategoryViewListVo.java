@@ -1,15 +1,16 @@
-package com.myxxts.mls.module.core.category;
+package com.myxxts.mls.module.core.category.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.myxxts.mls.module.BaseModule;
+import lombok.*;
 import org.bson.types.ObjectId;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryViewListVo {
-        private ObjectId acid; // Article category id
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class CategoryViewListVo extends BaseModule {
+        private ObjectId cid; // Article category id
         private CategoryViewListVo child; // Article category child
         private String name; // Article category name
         private String description; // Tag description

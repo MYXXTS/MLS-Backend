@@ -1,12 +1,9 @@
-package com.myxxts.mls.module.core.article;
+package com.myxxts.mls.module.core.article.vo;
 
 import com.myxxts.mls.module.BaseModule;
-import com.myxxts.mls.module.core.category.CategoryViewListVo;
-import com.myxxts.mls.module.core.tag.TagViewListVo;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import com.myxxts.mls.module.core.category.vo.CategoryViewListVo;
+import com.myxxts.mls.module.core.tag.vo.TagViewListVo;
+import lombok.*;
 import org.bson.types.ObjectId;
 
 import java.time.LocalDateTime;
@@ -15,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class ArticleViewInfoVo extends BaseModule {
     private ObjectId aid; // Article id

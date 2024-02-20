@@ -1,12 +1,9 @@
-package com.myxxts.mls.module.core.article;
+package com.myxxts.mls.module.core.article.vo;
 
 import com.myxxts.mls.module.BaseModule;
-import com.myxxts.mls.module.core.category.CategoryConsoleListVo;
-import com.myxxts.mls.module.core.tag.TagConsoleListVo;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import com.myxxts.mls.module.core.category.vo.CategoryConsoleListVo;
+import com.myxxts.mls.module.core.tag.vo.TagConsoleListVo;
+import lombok.*;
 import org.bson.types.ObjectId;
 
 import java.time.LocalDateTime;
@@ -15,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class ArticleConsoleInfoVo extends BaseModule {
     private ObjectId aid; // Article id
@@ -42,7 +40,7 @@ class ArticleConsoleInfoVoMetaData {
     private Boolean isTop; // Article is top
     private Integer expire; // Article expire status
     private LocalDateTime expireTime; // Article expire time
-    private String copyright; // Article copyright information
+    private String copyright; // Article copyright
     private String articleStatus; // Article status
-    private String copyrightInfo; // If copyright is 200 or 202, save copyright information note
+    private String copyrightInfo; // Article copyright information
 }

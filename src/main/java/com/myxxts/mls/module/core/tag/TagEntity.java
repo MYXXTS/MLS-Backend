@@ -1,10 +1,7 @@
 package com.myxxts.mls.module.core.tag;
 
 import com.myxxts.mls.module.BaseModule;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -14,20 +11,15 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDateTime;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Document(collection = "tag")
-//@CompoundIndex(
-//        name = "tag_index",
-//        def = "{'name': 1, 'route': 1}",
-//        unique = true,
-//        background = true
-//)
 public class TagEntity extends BaseModule {
     @Id
     @Field(write = Field.Write.ALWAYS)
-    private ObjectId atid = new ObjectId(); // Article tag id
+    private ObjectId tid = new ObjectId(); // Article tag id
     @Field(write = Field.Write.ALWAYS)
     private Integer articleCount = 0; // Tag article count
     @Field(write = Field.Write.ALWAYS)

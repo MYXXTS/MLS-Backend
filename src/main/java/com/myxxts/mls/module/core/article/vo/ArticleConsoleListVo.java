@@ -1,12 +1,9 @@
-package com.myxxts.mls.module.core.article;
+package com.myxxts.mls.module.core.article.vo;
 
 import com.myxxts.mls.module.BaseModule;
-import com.myxxts.mls.module.core.category.CategoryConsoleListVo;
-import com.myxxts.mls.module.core.tag.TagConsoleListVo;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import com.myxxts.mls.module.core.category.vo.CategoryConsoleListVo;
+import com.myxxts.mls.module.core.tag.vo.TagConsoleListVo;
+import lombok.*;
 import org.bson.types.ObjectId;
 
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class ArticleConsoleListVo extends BaseModule {
     private ObjectId aid; // Article id
