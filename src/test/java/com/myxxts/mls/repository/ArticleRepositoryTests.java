@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @SpringBootTest
-public class ArticleRepositoryTest {
+public class ArticleRepositoryTests {
     @Autowired
     private ArticleRepository articleRepository;
 
@@ -47,8 +47,8 @@ public class ArticleRepositoryTest {
                 user,
                 LocalDateTime.now(),
                 LocalDateTime.now(),
-                List.of(category),
                 List.of(tag1, tag2),
+                List.of(category),
                 "default article",
                 "this is the default article content",
                 "this is the default article briefIntroduction",
