@@ -28,11 +28,12 @@ public class TagEntity extends BaseModule {
     @Field(write = Field.Write.ALWAYS)
     private String description; // Tag description
     @Field(write = Field.Write.ALWAYS)
-    private String route = name; // Tag route
+    private String route; // Tag route
 
     public TagEntity(ObjectId createBy, ObjectId updateBy, LocalDateTime createTime, LocalDateTime updateTime, String name, String description) {
         super(createBy, updateBy, createTime, updateTime);
         this.name = name;
         this.description = description;
+        this.route = name.replaceAll("\\s+", "-");
     }
 }
