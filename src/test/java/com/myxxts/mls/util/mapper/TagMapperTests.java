@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @SpringBootTest
@@ -21,16 +20,12 @@ public class TagMapperTests {
         TagEntity tagEntity = new TagEntity(
                 userId,
                 userId,
-                LocalDateTime.now(),
-                LocalDateTime.now(),
                 "test tag",
                 "test tag description"
         );
         TagEntity tagEntity1 = new TagEntity(
                 userId,
                 userId,
-                LocalDateTime.now(),
-                LocalDateTime.now(),
                 "test tag 1",
                 "test tag description 1"
         );
