@@ -6,7 +6,6 @@ import com.myxxts.mls.module.core.tag.vo.TagViewListVo;
 import lombok.*;
 import org.bson.types.ObjectId;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -27,15 +26,4 @@ public class ArticleViewInfoVo extends BaseModule {
     private Integer viewCount; // Article view count
     private Integer likeCount; // Article like count
     private ArticleViewInfoVoMetaData metaData; // Article meta data
-}
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-class ArticleViewInfoVoMetaData {
-    private Integer allowComment; // Article allow comment
-    private Integer expire; // Article expire status
-    private LocalDateTime expireTime; // Article expire time
-    private String copyright; // Article copyright
-    private String copyrightInfo; // Article copyright information
 }

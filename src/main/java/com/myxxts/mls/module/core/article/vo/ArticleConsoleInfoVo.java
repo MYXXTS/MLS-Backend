@@ -6,7 +6,6 @@ import com.myxxts.mls.module.core.tag.vo.TagConsoleListVo;
 import lombok.*;
 import org.bson.types.ObjectId;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -29,18 +28,4 @@ public class ArticleConsoleInfoVo extends BaseModule {
     private Integer viewCount; // Article view count
     private Integer likeCount; // Article like count
     private ArticleConsoleInfoVoMetaData metaData; // Article meta data
-}
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-class ArticleConsoleInfoVoMetaData {
-    private Boolean allowRss; // Article allow rss
-    private Boolean allowComment; // Article allow comment
-    private Boolean isTop; // Article is top
-    private Integer expire; // Article expire status
-    private LocalDateTime expireTime; // Article expire time
-    private String copyright; // Article copyright
-    private String articleStatus; // Article status
-    private String copyrightInfo; // Article copyright information
 }
