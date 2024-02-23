@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @SpringBootTest
@@ -29,24 +28,18 @@ public class ArticleRepositoryTests {
         TagEntity tag1 = new TagEntity(
                 user,
                 user,
-                LocalDateTime.now(),
-                LocalDateTime.now(),
                 "default tag 1",
                 "this is the default tag 1"
         );
         TagEntity tag2 = new TagEntity(
                 user,
                 user,
-                LocalDateTime.now(),
-                LocalDateTime.now(),
                 "default tag 2",
                 "this is the default tag 2"
         );
         ArticleEntity article = new ArticleEntity(
                 user,
                 user,
-                LocalDateTime.now(),
-                LocalDateTime.now(),
                 List.of(tag1, tag2),
                 List.of(category),
                 "default article",
