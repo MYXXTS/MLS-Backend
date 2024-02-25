@@ -4,7 +4,6 @@ import com.myxxts.mls.module.BaseModule;
 import com.myxxts.mls.module.core.category.vo.CategoryConsoleListVo;
 import com.myxxts.mls.module.core.tag.vo.TagConsoleListVo;
 import lombok.*;
-import org.bson.types.ObjectId;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class ArticleConsoleInfoVo extends BaseModule {
-    private ObjectId aid; // Article id
+    private String aid; // Article id
     private List<TagConsoleListVo> tags; // Article tags
     private List<CategoryConsoleListVo> categories; // Article categories
     private String title; // Article title

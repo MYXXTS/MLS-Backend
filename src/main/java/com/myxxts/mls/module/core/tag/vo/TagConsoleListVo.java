@@ -2,7 +2,6 @@ package com.myxxts.mls.module.core.tag.vo;
 
 import com.myxxts.mls.module.BaseModule;
 import lombok.*;
-import org.bson.types.ObjectId;
 
 @Data
 @AllArgsConstructor
@@ -10,7 +9,7 @@ import org.bson.types.ObjectId;
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class TagConsoleListVo extends BaseModule {
-    private ObjectId tid; // Article tag id
+    private String tid; // Article tag id
     private Integer articleCount; // Tag article count
     private String name; // Tag name
     private String description; // Tag description
