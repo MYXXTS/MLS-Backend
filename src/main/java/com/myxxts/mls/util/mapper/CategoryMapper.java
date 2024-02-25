@@ -21,7 +21,7 @@ public abstract class CategoryMapper {
         categoryConsoleListVo.setUpdateBy( categoryEntity.getUpdateBy() );
         categoryConsoleListVo.setCreateTime( categoryEntity.getCreateTime() );
         categoryConsoleListVo.setUpdateTime( categoryEntity.getUpdateTime() );
-        categoryConsoleListVo.setCid( categoryEntity.getCid() );
+        categoryConsoleListVo.setCid( categoryEntity.getCid().toHexString() );
         categoryConsoleListVo.setArticleCount( categoryEntity.getArticleCount() );
         categoryConsoleListVo.setName( categoryEntity.getName() );
         categoryConsoleListVo.setDescription( categoryEntity.getDescription() );
@@ -47,7 +47,7 @@ public abstract class CategoryMapper {
         categoryViewListVo.setUpdateBy( categoryEntity.getUpdateBy() );
         categoryViewListVo.setCreateTime( categoryEntity.getCreateTime() );
         categoryViewListVo.setUpdateTime( categoryEntity.getUpdateTime() );
-        categoryViewListVo.setCid( categoryEntity.getCid() );
+        categoryViewListVo.setCid( categoryEntity.getCid().toHexString() );
         categoryViewListVo.setName( categoryEntity.getName() );
         categoryViewListVo.setDescription( categoryEntity.getDescription() );
         categoryViewListVo.setRoute( categoryEntity.getRoute() );
