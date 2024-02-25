@@ -15,10 +15,12 @@ public enum HttpCodeEnum {
 
     private final Integer code;
     private final String message;
+
     HttpCodeEnum(Integer code) {
         this.code = code;
         this.message = null;
     }
+
     HttpCodeEnum(Integer code, String message) {
         this.code = code;
         this.message = message;

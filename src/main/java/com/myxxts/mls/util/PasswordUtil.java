@@ -20,7 +20,7 @@ public class PasswordUtil {
     /**
      * matches password and encodedPassword
      *
-     * @param password plaintext password
+     * @param password        plaintext password
      * @param encodedPassword encoded password in database
      * @return Boolean result of matching
      */

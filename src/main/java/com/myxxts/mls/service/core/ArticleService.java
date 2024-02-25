@@ -14,13 +14,13 @@ import java.util.Map;
 @Validated
 public interface ArticleService {
     // Console panel
-    List<ArticleConsoleListVo> findAllArticleForConsole( List<String> tags, List<String> categories, Map<String, Integer> sort, Integer page, Integer size);
+    List<ArticleConsoleListVo> findAllArticleForConsole(List<String> tags, List<String> categories, Map<String, Integer> sort, Integer page, Integer size);
 
     ArticleConsoleInfoVo findArticleByIdForConsole(@NotNull ObjectId id);
 
     // Frontend view
     ArticleViewInfoVo findArticleByIdForView(@NotNull ObjectId id);
 
-    List<ArticleViewListVo> findAllArticleForView( List<String> tags,  List<String> categories, Map<String, Integer> sort, Integer page, Integer size);
+    List<ArticleViewListVo> findAllArticleForView(List<String> tags, List<String> categories, Map<String, Integer> sort, Integer page, Integer size);
 
 }

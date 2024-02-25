@@ -34,6 +34,7 @@ public class CategoryEntity extends BaseModule {
         this.description = description;
         route = name.replaceAll("\\s+", "-");
     }
+
     public CategoryEntity(ObjectId createBy, ObjectId updateBy, String name, String description) {
         super(createBy, updateBy);
         this.name = name;
