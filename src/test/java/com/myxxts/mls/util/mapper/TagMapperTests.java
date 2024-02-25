@@ -7,13 +7,24 @@ import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 public class TagMapperTests {
     @Autowired
     private TagMapper tagMapper;
+    @Autowired
+    private ApplicationContext context;
+
+    @Test
+    void contextLoads() {
+        assertThat(context).isNotNull();
+    }
+
     @Test
     void testTagEntityToVoMapper() {
         ObjectId userId = new ObjectId();
