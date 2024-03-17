@@ -1,7 +1,9 @@
 # MLS-Java-Backend
 
-> Working in progress
-> 
+` Working in progress（项目进行中……）`
+
+` Temporary suspension of this repository's activity due to personal reasons of the primary developer.（因开发者个人原因暂时停止开发）`
+
 > This project is still under development, and the current version is not stable. Please do not use it in a production environment.
 
 
