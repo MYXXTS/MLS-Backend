@@ -1,0 +1,64 @@
+# IDE & Editor
+**/.vscode/*
+!**/.vscode/extensions.json
+.idea
+*.code-workspace
+*.iws
+*.iml
+*.ipr
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build & Dependencies
+node
+node_modules
+dist
+dist-ssr
+coverage
+target/
+build/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Testing
+/cypress/videos/
+/cypress/screenshots/
+test
+http
+
+# System & Misc
+.DS_Store
+*.local
+*.tsbuildinfo
+.wakatime-project
+HELP.md
+
+# Spring Tool Suite
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/

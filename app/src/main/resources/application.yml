@@ -1,0 +1,33 @@
+server:
+  port: 6533
+
+springdoc:
+  api-docs:
+    path: /v1/api-docs
+  swagger-ui:
+    path: /v1/swagger-ui.html
+
+debug: true
+
+spring:
+  application:
+    name: MLS-Backend
+  jackson:
+    property-naming-strategy: LOWER_CASE
+  data:
+    mongodb:
+      database: mlsdev
+      host: localhost
+      port: 27017
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 10000
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      additional-paths:
+        - src/main/java
